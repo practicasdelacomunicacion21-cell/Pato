@@ -1,57 +1,50 @@
-// 🧠 BASE DE CONOCIMIENTO (Programa Práctica Docente III)
+// BASE DE CONOCIMIENTO
 const conocimiento = [
 
     {
-        claves: ["unidad 1", "identidad docente", "experiencia pedagógica"],
-        respuesta: "La Unidad 1 trabaja la construcción de la identidad docente, la reflexión sobre la práctica, narrativas pedagógicas, autoevaluación y el análisis de la escuela como institución social y cultural."
+        claves: ["unidad 1", "identidad docente"],
+        respuesta: "La Unidad 1 trabaja la construcción de la identidad docente, la reflexión sobre la práctica y el análisis de la escuela."
     },
 
     {
-        claves: ["unidad 2", "planificación", "intervenciones didácticas"],
-        respuesta: "La Unidad 2 se centra en el diseño de intervenciones didácticas: planificación de clases, secuencias didácticas, proyectos interdisciplinarios, trabajo colaborativo y uso de tecnologías."
+        claves: ["unidad 2", "planificación"],
+        respuesta: "La Unidad 2 se centra en la planificación de clases, secuencias didácticas y uso de tecnologías."
     },
 
     {
-        claves: ["unidad 3", "observación", "práctica crítica"],
-        respuesta: "La Unidad 3 aborda la observación institucional: análisis de clases, registros, diagnósticos, entrevistas y reflexión sobre las dinámicas escolares desde una mirada crítica e inclusiva."
+        claves: ["unidad 3", "observación"],
+        respuesta: "La Unidad 3 aborda la observación institucional, análisis de clases y reflexión crítica."
     },
 
     {
-        claves: ["unidad 4", "residencia", "intervención docente"],
-        respuesta: "La Unidad 4 trata la residencia pedagógica: planificación y ejecución de clases reales, evaluación, ajustes pedagógicos y reflexión sobre la práctica mediante memorias."
+        claves: ["unidad 4", "residencia"],
+        respuesta: "La Unidad 4 trata la residencia pedagógica, con implementación de clases reales y reflexión docente."
     },
 
     {
-        claves: ["evaluación", "taller 1"],
-        respuesta: "El Taller Integrador I se enfoca en la evaluación de los aprendizajes: enfoques, instrumentos, acreditación y la dimensión subjetiva de evaluar."
+        claves: ["evaluación"],
+        respuesta: "La evaluación analiza los aprendizajes mediante distintos instrumentos y criterios."
     },
 
     {
-        claves: ["tic", "tecnologia", "taller 2"],
-        respuesta: "El Taller Integrador II aborda el uso de TIC: diseño de recursos digitales, integración tecnológica, adaptación a la diversidad e innovación educativa."
+        claves: ["tic", "tecnologia"],
+        respuesta: "Las TIC permiten innovar en la enseñanza y crear recursos digitales adaptados a los estudiantes."
     },
 
     {
-        claves: ["cronograma", "tiempos", "cuatrimestre"],
-        respuesta: "El programa se organiza por cuatrimestres: en el primero se trabaja Unidad 1, 2 y evaluación; en el segundo, profundización, observación, residencia y TIC."
+        claves: ["fechas", "cronograma", "cuatrimestre"],
+        respuesta: "📅 El programa se organiza por meses: \n- Marzo-Abril: Unidad 1 \n- Mayo: Unidad 2 \n- Junio: Evaluación \n- Agosto: Unidad 2 \n- Septiembre: Unidad 3 \n- Octubre-Noviembre: Residencia \n- Noviembre: Evaluación final."
     },
 
     {
-        claves: ["programa", "materia"],
-        respuesta: "Práctica Docente III articula teoría y práctica, promoviendo reflexión crítica, trabajo colaborativo, uso de TIC y formación progresiva hasta la residencia docente."
+        claves: ["cuando es el parcial", "examen"],
+        respuesta: "📝 Las evaluaciones se ubican en: \n- Junio (primer cuatrimestre) \n- Noviembre (segundo cuatrimestre)."
     }
-    {
-    claves: ["fechas", "cronograma", "cuatrimestre"],
-    respuesta: "📅 El programa se organiza por meses: \n- Marzo-Abril: Unidad 1 \n- Mayo: Unidad 2 \n- Junio: Evaluación (Taller I) \n- Agosto: Unidad 2 \n- Septiembre: Unidad 3 \n- Octubre-Noviembre: Residencia \n- Noviembre: Evaluación final (Taller II)."
-},
-{
-    claves: ["cuando es el parcial", "examen", "evaluacion"],
-    respuesta: "📝 Las evaluaciones no tienen fechas exactas en el programa, pero se ubican en: \n- Junio (primer cuatrimestre) \n- Noviembre (segundo cuatrimestre)."
-}
+
 ];
 
 
-// 📩 ENVIAR MENSAJE
+// ENVIAR MENSAJE
 function sendMessage() {
     let input = document.getElementById("userInput");
     let message = input.value.trim();
@@ -70,7 +63,7 @@ function sendMessage() {
 }
 
 
-// 💬 MOSTRAR MENSAJES EN PANTALLA
+// MOSTRAR MENSAJE
 function addMessage(sender, text) {
     let chatbox = document.getElementById("chatbox");
     let message = document.createElement("p");
@@ -83,17 +76,15 @@ function addMessage(sender, text) {
 }
 
 
-// 🤖 RESPUESTA DEL BOT (INTELIGENTE)
+// RESPUESTA DEL BOT
 function getBotResponse(input) {
 
     input = input.toLowerCase();
 
-    // saludo
-    if (input.includes("hola") || input.includes("buenas")) {
-        return "👋 ¡Hola! Estoy para ayudarte 😊 Podés preguntarme sobre unidades, evaluación, TIC o residencia.";
+    if (input.includes("hola")) {
+        return "👋 ¡Hola! Soy Patricia 😊 ¿En qué puedo ayudarte?";
     }
 
-    // búsqueda en el programa
     for (let item of conocimiento) {
         for (let clave of item.claves) {
             if (input.includes(clave)) {
@@ -102,17 +93,19 @@ function getBotResponse(input) {
         }
     }
 
-    return "🤔 No encontré eso en el programa. Probá preguntando por unidades, evaluación, TIC o residencia.";
+    return "🤔 No encontré eso en el programa. Probá con unidades, evaluación, TIC o residencia.";
 }
 
+
+// BIENVENIDA
 window.onload = function() {
     addMessage("bot", "👋 ¡Hola! Soy Patricia, tu asistente de Práctica Docente III.");
     
     setTimeout(() => {
-        addMessage("bot", "📚 Estoy para ayudarte con el programa: unidades, evaluación, TIC y residencia.");
+        addMessage("bot", "📚 Puedo ayudarte con unidades, evaluación, TIC, fechas y residencia.");
     }, 500);
 
     setTimeout(() => {
-        addMessage("bot", "💬 Haceme una pregunta cuando quieras 😊");
+        addMessage("bot", "💬 Escribí tu pregunta cuando quieras 😊");
     }, 1000);
 };
