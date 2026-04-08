@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Chatbot Educativo</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Patricia</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <div class="chat-container">
-   <h2>🤖 Patricia</h2>
 
-    <div id="chatbox"></div>
+    <div class="chat-header">
+        🤖 Patricia
+        <p>Asistente de Práctica Docente III</p>
+    </div>
+
+    <div id="chatbox" class="chatbox"></div>
 
     <div class="input-area">
-        <input type="text" id="userInput" placeholder="Escribí tu pregunta...">
+        <input 
+            type="text" 
+            id="userInput" 
+            placeholder="Escribí tu pregunta..."
+            onkeypress="if(event.key === 'Enter') sendMessage()"
+        >
         <button onclick="sendMessage()">Enviar</button>
     </div>
+
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
