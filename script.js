@@ -40,6 +40,14 @@ const conocimiento = [
         claves: ["programa", "materia"],
         respuesta: "Práctica Docente III articula teoría y práctica, promoviendo reflexión crítica, trabajo colaborativo, uso de TIC y formación progresiva hasta la residencia docente."
     }
+    {
+    claves: ["fechas", "cronograma", "cuatrimestre"],
+    respuesta: "📅 El programa se organiza por meses: \n- Marzo-Abril: Unidad 1 \n- Mayo: Unidad 2 \n- Junio: Evaluación (Taller I) \n- Agosto: Unidad 2 \n- Septiembre: Unidad 3 \n- Octubre-Noviembre: Residencia \n- Noviembre: Evaluación final (Taller II)."
+},
+{
+    claves: ["cuando es el parcial", "examen", "evaluacion"],
+    respuesta: "📝 Las evaluaciones no tienen fechas exactas en el programa, pero se ubican en: \n- Junio (primer cuatrimestre) \n- Noviembre (segundo cuatrimestre)."
+}
 ];
 
 
